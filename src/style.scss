@@ -1,0 +1,212 @@
+/*-----Обнуление-----*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+
+/*-----Импорты-----*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap');
+
+/*-----Переменные-----*/
+:root {
+  --primary-color: #FFF;
+  --secondary-color: #E7DED8;
+  --third-color: #DACEC6;
+  --brown-color: #68513F;
+  --white-color: #F1EBE7;
+}
+
+/*-----Отзывчивость-----*/
+$maxWidth: 1340;
+@function adaptNum($Size: 0, $MinSize: 1) {
+  $adaptSize: calc($Size * 100 / $maxWidth * 1vw);
+  $Size: ($Size + px);
+  $MinSize: ($MinSize + px);
+  @return clamp($MinSize, $adaptSize, $Size);
+}
+
+/*-----Текста-----*/
+@font-face {
+  font-family: "STSong"; 
+  src: url("./fonts/chinese.stsong.woff") format("woff"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+// Style Script, Inter, STSong
+
+/*-----Стилизация-----*/
+.wrapper {
+  width: 1340px;
+}
+.header {
+  &__logo {
+  }
+  &__nav {
+  }
+  &__nav-list {
+  }
+  &__nav-point {
+  }
+  &__cart {
+  }
+  &__cart-text {
+  }
+  &__cart-info {
+  }
+}
+.discover {
+  &__text {
+  }
+  &__button {
+  }
+  &__you {
+  }
+}
+.skincare {
+  &__header-text {
+  }
+  &__h2 {
+  }
+  &__text {
+  }
+  &__button {
+  }
+  &__img-1 {
+  }
+  &__img-2 {
+  }
+  &__img-3 {
+  }
+  &__img-4 {
+  }
+  &__img-5 {
+  }
+}
+.img {
+  &__photo {
+  }
+}
+.products {
+  &__header-text {
+  }
+  &__text {
+  }
+  &__carts {
+  }
+  &__cart {
+  }
+}
+.cart {
+  &__img {
+  }
+  &__text {
+  }
+  &__info {
+  }
+  &__price {
+  }
+  &__name {
+  }
+  &__button {
+  }
+}
+.feature {
+  &__img {
+  }
+  &__main {
+  }
+  &__header {
+  }
+  &__text {
+  }
+  &__info {
+  }
+  &__button {
+  }
+}
+.companies {
+  &__text {
+  }
+  &__logos {
+  }
+  &__logo {
+  }
+  &__img {
+  }
+}
+.services {
+  &__service {
+  }
+  &__service_first {
+  }
+}
+.service {
+  &__link {
+  }
+}
+.skinn {
+  &__header-text {
+  }
+  &__blogs {
+  }
+  &__blog {
+  }
+}
+.blog {
+  &__img {
+  }
+  &__info {
+  }
+  &__text {
+  }
+  &__button {
+  }
+}
+.footer {
+  &__skinn {
+  }
+  &__logo {
+  }
+  &__wise {
+  }
+  &__web {
+  }
+  &__link {
+  }
+  &__pages {
+  }
+  &__header {
+  }
+  &__ul-1 {
+  }
+  &__li {
+  }
+  &__ul-2 {
+  }
+  &__contact {
+  }
+  &__contact-text {
+  }
+  &__for-you {
+  }
+  &__schedule {
+  }
+  &__schedule-text {
+  }
+  &__networks {
+  }
+  &__network {
+  }
+}
