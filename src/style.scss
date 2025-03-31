@@ -26,6 +26,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
   --third-color: #DACEC6;
   --brown-color: #68513F;
   --white-color: #F1EBE7;
+
+  font-family: "Inter";
 }
 
 /*-----Отзывчивость-----*/
@@ -44,54 +46,157 @@ $maxWidth: 1340;
   font-style: normal; 
   font-weight: normal; 
 } 
-// Style Script, Inter, STSong
+// Style Script, STSong
 
 /*-----Стилизация-----*/
 .wrapper {
   width: 1340px;
+  margin: 0 auto;
 }
 .header {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__logo {
+    margin: 0 395px 0 0;
   }
   &__nav {
+    margin: 0 405px 0 0;
   }
   &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__nav-point {
+    margin: 0 40px 0 0;
+    font-size: 17px;
+    line-height: 19.6px;
+    &::last-child {
+      margin: 0;
+    }
   }
   &__cart {
+    display: flex;
   }
   &__cart-text {
+    font-size: 17px;
+    line-height: 19.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px 0 0;
   }
   &__cart-info {
+    width: 24px;
+    height: 24px;
+    background: var(--secondary-color);
+    font-size: 11px;
+    line-height: 24px;
+    color: var(--brown-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .discover {
+  background: no-repeat right url("./img/discover.png");
+  height: 750px;
+  padding: 0 0 0 50px;
   &__text {
+    font-family: "STSong";
+    font-size: 88px;
+    line-height: 126px;
+    padding: 150px 0 0 0;
   }
   &__button {
+    margin: 45px 0 0 0;
+    color: var(--brown-color);
+    background: var(--white-color);
+    border: 1px solid var(--third-color);
+    width: 143px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 19.6px;
   }
   &__you {
+    font-size: 175px;
+    line-height: 182px;
+    font-family: "Style Script";
+    color: var(--brown-color);
+    position: absolute;
+    transform: rotate(5.54deg);
+    left: 700px;
+    top: 480px;
   }
 }
 .skincare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   &__header-text {
+    margin: 240px 0 0 0;
+    text-align: center;
+    font-size: 65px;
+    line-height: 98px;
+    font-family: "STSong";
   }
   &__h2 {
+
+    font-size: 137px;
+    line-height: 112px;
+    font-family: "Style Script";
+    color: var(--brown-color);
+    transform: rotate(-5.8deg);
   }
   &__text {
+    margin: 20px 0 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 19.6px;
+    width: 649px;
   }
   &__button {
+    margin: 50px 0 240px 0;
+    color: var(--brown-color);
+    background: var(--white-color);
+    border: 1px solid var(--third-color);
+    border-radius: 73px;
+    width: 95px;
+    height: 45px;
+    font-size: 14px;
+    line-height: 19.6px;
   }
   &__img-1 {
+    position: absolute;
+    top: 117px;
+    left: 46px;
   }
   &__img-2 {
+    position: absolute;
+    top: 20px;
+    left: 982px;
   }
   &__img-3 {
+    position: absolute;
+    top: 488px;
+    left: 104px;
   }
   &__img-4 {
+    position: absolute;
+    top: 266px;
+    left: 1064px;
   }
   &__img-5 {
+    position: absolute;
+    top: 569px;
+    left: 976px;
   }
 }
 .img {
@@ -99,9 +204,23 @@ $maxWidth: 1340;
   }
 }
 .products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   &__header-text {
+    margin: 90px 0 0 0;
+    font-size: 137px;
+    line-height: 112px;
+    font-family: "Style Script";
+    color: var(--brown-color);
+
   }
   &__text {
+    margin: 5px 0 0 0;
+    font-size: 65px;
+    line-height: 98px;
+    font-family: "STSong";
   }
   &__carts {
   }
@@ -109,104 +228,275 @@ $maxWidth: 1340;
   }
 }
 .cart {
+  padding: 10px;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  width: 325px;
+  height: 482px;
+  margin: 0 14px 0 0;
+
+  &::last-child {
+    margin: 0;
+  }
   &__img {
+    width: 305px;
+    height: 305px;
   }
   &__text {
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
   }
   &__info {
+    font-size: 13px;
+    line-height: 19.6px;
   }
   &__price {
+    font-size: 14px;
+    line-height: 19.5px;
   }
   &__name {
+    margin: 6px 0 0 0;
+    font-size: 19px;
+    line-height: 26px;
+    height: 60px;
   }
   &__button {
+    color: var(--brown-color);
+    background: var(--white-color);
+    border: 1px solid var(--third-color);
+    width: 305px;
+    height: 45px;
+    font-size: 14px;
+    line-height: 19.6px;
   }
 }
 .feature {
+  margin: 90px 0 0 0;
+  display: flex;
+  align-items: center;
   &__img {
+    width: 620px;
+    height: 481px;
   }
   &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 0 0 180px;
   }
   &__header {
+    font-size: 137px;
+    line-height: 112px;
+    font-family: "Style Script";
+    color: var(--brown-color);
+    text-align: center;
   }
   &__text {
+    margin: 9px 0 0 0;
+    font-size: 70px;
+    line-height: 98px;
+    text-align: center;
+    font-family: "STSong";
   }
   &__info {
+    margin: 25px 0 0 0;
+    font-size: 17px;
+    line-height: 30.6px;
+    text-align: center;
+    width: 460px;
   }
   &__button {
+    margin: 40px 0 0 0;
+    color: var(--brown-color);
+    background: var(--white-color);
+    border: 1px solid var(--third-color);
+    width: 115px;
+    height: 45px;
+    font-size: 14px;
+    line-height: 19.6px;
   }
 }
 .companies {
+  margin: 202px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   &__text {
+    font-size: 28px;
+    line-height: 39.2px;
+    text-align: center;
+    width: 780px;
   }
   &__logos {
+    margin: 56.75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__logo {
+    margin: 0 40px 0 0;
+    &::last-child {
+      margin: 0;
+    }
   }
   &__img {
   }
 }
 .services {
+  margin: 80px 200px;
+  display: flex;
   &__service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 518px;
+    height: 518px;
+    background: url("./img/services3.png");
+    &_first {
+      width: 403px;
+      background: url("./img/services1.png");
+    }
+    &_second {
+      background: url("./img/services2.png");
+    }
   }
-  &__service_first {
-  }
-}
-.service {
   &__link {
+    width: 150px;
+    height: 150px;
+    color: #FFF;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FFF;
+    font-size: 13px;
+    line-height: 19.6px;
   }
 }
+
 .skinn {
+  margin: 0 0 127px 0;
   &__header-text {
+    font-family: "STSong";
+    font-size: 66px;
+    line-height: 98px;
+    text-align: center;
   }
   &__blogs {
+    margin: 50px 0 0 0;
+    display: flex;
   }
   &__blog {
   }
 }
 .blog {
+  margin: 0 50px 0 0;
+  display: flex;
   &__img {
+    width: 308px;
+    height: 213px;
+    margin: 0 30px 0 0;
   }
   &__info {
+    display: flex;
+    flex-direction: column;
   }
   &__text {
+    font-family: "STSong";
+    font-size: 28px;
+    line-height: 36.4px;
   }
   &__button {
+    margin: 58px 0 0 0;
+    color: var(--brown-color);
+    background: var(--white-color);
+    border: 1px solid var(--third-color);
+    border-radius: 166px;
+    width: 115px;
+    height: 45px;
+    font-size: 14px;
+    line-height: 19.6px;
   }
 }
 .footer {
+  display: flex;
+  width: 100%;
+  height: 353px;
+  border-radius: 10px;
+  background: var(--secondary-color);
+  font-size: 14px;
+  line-height: 19.6px;
+  padding: 50px;
+  margin: 0 0 60px 0;
   &__skinn {
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px 0 0;
   }
   &__logo {
+    width: 86px;
+    height: 26px;
   }
   &__wise {
+    margin: 21px 0 0 0;
+    width: 160px;
   }
   &__web {
+    &_first {
+      margin: 57px 0 0 0;
+    }
   }
   &__link {
+    color: var(--brown-color);
   }
   &__pages {
+    margin: 0 100px 0 0;
   }
   &__header {
+    font-family: "STSong";
+    font-size: 27px;
+    line-height: 39.2px;
+    margin: 0 0 29px 0;
+  }
+  &__lists {
+    display: flex;
   }
   &__ul-1 {
+    margin: 0 77px 0 0;
   }
   &__li {
+    margin: 0 0 9px 0;
   }
   &__ul-2 {
   }
+  &__contacts {
+    margin: 0 100px 0 0;
+    
+  }
   &__contact {
+    color: var(--brown-color);
   }
   &__contact-text {
+    margin: 40px 0 0 0;
   }
   &__for-you {
   }
   &__schedule {
+    margin: 0 0 70px 0;
   }
   &__schedule-text {
   }
   &__networks {
+    display: flex;
   }
   &__network {
+    margin: 0 40px 0 0;
+    &::last-child {
+      margin: 0;
+    }
   }
 }
