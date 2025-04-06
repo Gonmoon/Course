@@ -42,7 +42,7 @@ $maxWidth: 1340;
 /*-----Текста-----*/
 @font-face {
   font-family: "STSong"; 
-  src: url("./fonts/chinese.stsong.woff") format("woff"); 
+  src: url("../../fonts/chinese.stsong.woff") format("woff"); 
   font-style: normal; 
   font-weight: normal; 
 } 
@@ -101,7 +101,7 @@ $maxWidth: 1340;
   }
 }
 .discover {
-  background: no-repeat right url("./img/discover.png");
+  background: no-repeat right url("../../img/discover.png");
   height: 750px;
   padding: 0 0 0 50px;
   &__text {
@@ -319,7 +319,7 @@ $maxWidth: 1340;
   }
 }
 .companies {
-  margin: 202px 0 0 0;
+  margin: adaptNum(202) 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -354,13 +354,13 @@ $maxWidth: 1340;
     justify-content: center;
     width: 518px;
     height: 518px;
-    background: url("./img/services3.png");
+    background: url("../../img/services3.png");
     &_first {
       width: 403px;
-      background: url("./img/services1.png");
+      background: url("../../img/services1.png");
     }
     &_second {
-      background: url("./img/services2.png");
+      background: url("../../img/services2.png");
     }
   }
   &__link {
@@ -379,7 +379,7 @@ $maxWidth: 1340;
 }
 
 .skinn {
-  margin: 0 0 127px 0;
+  margin: 0 0 adaptNum(127) 0;
   &__header-text {
     font-family: "STSong";
     font-size: 66px;

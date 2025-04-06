@@ -1,0 +1,203 @@
+@media (max-width: 768px) {
+	.wrapper {
+		width: 768px;
+  		margin: 0 auto;
+	}
+	.header {
+		justify-content: space-between;
+		&__logo {
+			margin: 0 0 0 10px;
+		}
+		&__nav {
+			margin: 0;
+		}
+		&__nav-list {
+		}
+		&__nav-point {
+		}
+		&__cart {
+			margin: 0 10px 0 0;
+		}
+		&__cart-text {
+		}
+		&__cart-info {
+		}
+	}
+	.discover {
+		&__text {
+		}
+		&__button {
+		}
+		&__you {
+			left: 400px;
+		}
+	}
+	.skincare {
+		&__header-text {
+		}
+		&__h2 {
+		}
+		&__text {
+		}
+		&__button {
+		}
+		&__img-1 {
+			z-index: -1;
+			opacity: 0.5;
+		}
+		&__img-2 {
+			z-index: -1;
+			opacity: 0.5;
+			left: 482px;
+		}
+		&__img-3 {
+			z-index: -1;
+			opacity: 0.5;
+		}
+		&__img-4 {
+			z-index: -1;
+			opacity: 0.5;
+			left: 520px;
+		}
+		&__img-5 {
+			z-index: -1;
+			opacity: 0.5;
+			left: 476px;
+		}
+	}
+	.img {
+		&__photo {
+			width: 768px;
+		}
+	}
+	.products {
+		&__header-text {
+		}
+		&__text {
+		}
+		&__carts {
+		}
+		&__cart {
+		}
+	}
+	.cart {
+		&__img {
+		}
+		&__text {
+		}
+		&__info {
+		}
+		&__price {
+		}
+		&__name {
+		}
+		&__button {
+		}
+	}
+	.feature {
+		&__img {
+			display: none;
+		}
+		&__main {
+			margin: 0 auto;
+		}
+		&__header {
+		}
+		&__text {
+		}
+		&__info {
+		}
+		&__button {
+		}
+	}
+	.companies {
+		&__text {
+			width: 768px;
+		}
+		&__logos {
+			margin: 80px 0;
+			width: 768px;
+		}
+		&__logo {
+		}
+		&__img {
+		}
+	}
+	.services {
+		width: 768px;
+		margin: 80px 0;
+		&__service {
+		}
+		&__service_first {
+		}
+		&__link {
+		}
+		&__service_second {
+		}
+	}
+	.skinn {
+		&__header-text {
+		}
+		&__blogs {
+			flex-wrap: wrap;
+		}
+		&__blog {
+			margin: 10px;
+		}
+	}
+	.blog {
+		&__img {
+		}
+		&__info {
+		}
+		&__text {
+		}
+		&__button {
+		}
+	}
+	.footer {
+		&__skinn {
+			margin: 0 30px 0 0;
+		}
+		&__logo {
+		}
+		&__wise {
+		}
+		&__web {
+		}
+		&__web_first {
+		}
+		&__link {
+		}
+		&__pages {
+			display: none;
+		}
+		&__header {
+		}
+		&__lists {
+		}
+		&__ul-1 {
+		}
+		&__li {
+		}
+		&__ul-2 {
+		}
+		&__contacts {
+			margin: 0 30px 0 0;
+		}
+		&__contact-text {
+		}
+		&__contact {
+		}
+		&__for-you {
+		}
+		&__schedule {
+		}
+		&__schedule-text {
+		}
+		&__networks {
+		}
+		&__network {
+		}
+	}
+}
