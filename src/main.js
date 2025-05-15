@@ -1,3 +1,47 @@
-import './styles/main/style.scss'
-import './styles/main/tablet-style.scss'
-import './styles/main/phone-style.scss'
+import './styles/main/style.scss';
+import './styles/main/tablet-style.scss';
+import './styles/main/phone-style.scss';
+
+import { ComponentHeader } from "./components/component-header.js";
+import { ComponentFooter } from "./components/component-footer.js";
+
+customElements.define("widget-header", ComponentHeader);
+customElements.define("widget-footer", ComponentFooter);
+
+document.addEventListener("DOMContentLoaded", () => {
+  // initBurger();
+
+  const sections = document.querySelectorAll('section');
+
+  if(sections) {
+      const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+  
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+
+  const scrollBtn = document.getElementById('scrollToTop');
+
+  if(scrollBtn) {
+      window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('show', window.scrollY > 300);
+    });
+  
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
