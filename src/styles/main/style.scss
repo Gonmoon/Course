@@ -21,11 +21,27 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 /*-----Переменные-----*/
 :root {
-  --primary-color: #FFF;
   --secondary-color: #E7DED8;
-  --third-color: #DACEC6;
   --brown-color: #68513F;
   --white-color: #F1EBE7;
+
+  --color-muted: #aaa; // Обвотка кнопок + Auth
+  
+  --color-black: #000; // Цвет шрифта
+  --color-red: red;
+
+  // Доп, мб убрать
+  --color-white: var(--white-color); // #FFF
+  --color-dark-gray: var(--brown-color); // #333
+
+  // Bg всего кроме main
+  --color-panel-bg: var(--secondary-color); //#1E313B
+
+  // Feedback admin
+  --color-success: var(--brown-color); // #7b56f1
+
+   // Auth
+  --color-accent-hover: var(--color-muted); // #f98c39
 
   font-family: "Inter";
 }
@@ -124,7 +140,7 @@ section {
     margin: 45px 0 0 0;
     color: var(--brown-color);
     background: var(--white-color);
-    border: 1px solid var(--third-color);
+    border: 1px solid var(--color-muted);
     width: 143px;
     height: 45px;
     display: flex;
@@ -176,7 +192,7 @@ section {
     margin: 50px 0 240px 0;
     color: var(--brown-color);
     background: var(--white-color);
-    border: 1px solid var(--third-color);
+    border: 1px solid var(--color-muted);
     border-radius: 73px;
     width: 95px;
     height: 45px;
@@ -274,7 +290,7 @@ section {
   &__button {
     color: var(--brown-color);
     background: var(--white-color);
-    border: 1px solid var(--third-color);
+    border: 1px solid var(--color-muted);
     width: 305px;
     height: 45px;
     font-size: 14px;
@@ -321,7 +337,7 @@ section {
     margin: 40px 0 0 0;
     color: var(--brown-color);
     background: var(--white-color);
-    border: 1px solid var(--third-color);
+    border: 1px solid var(--color-muted);
     width: 115px;
     height: 45px;
     font-size: 14px;
@@ -424,7 +440,7 @@ section {
     margin: 58px 0 0 0;
     color: var(--brown-color);
     background: var(--white-color);
-    border: 1px solid var(--third-color);
+    border: 1px solid var(--color-muted);
     border-radius: 166px;
     width: 115px;
     height: 45px;
@@ -436,7 +452,6 @@ section {
   display: flex;
   width: 100%;
   height: 353px;
-  border-radius: 10px;
   background: var(--secondary-color);
   font-size: 14px;
   line-height: 19.6px;

@@ -28,7 +28,11 @@ export class AdminProductComponent extends HTMLElement {
   async connectedCallback() {
     this.innerHTML = `
       <div class="container-product">
+        <h2 class="container-product__title">Управление товарами</h2>
         <div class="container-product__wrapper">
+          <select id="productList" class="container__select">
+            <option value="">Выберите товар</option> <!-- Default option -->
+          </select>
           <form id="productForm" class="product-form">
             <input type="hidden" id="product-id" class="product-form__input" />
 
@@ -48,7 +52,6 @@ export class AdminProductComponent extends HTMLElement {
             <button type="button" id="updateBtn" class="product-form__button product-form__button--update button" disabled>Обновить</button>
             <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button" disabled>Удалить</button>
           </form>
-          <ul id="productList" class="product-list"></ul>
         </div>
       </div>
     `;
@@ -93,6 +96,7 @@ export class AdminProductComponent extends HTMLElement {
     this.updateBtn = this.querySelector('#updateBtn');
     this.deleteBtn = this.querySelector('#deleteBtn');
 
+    this.productList = this.querySelector('#productList');
     this.inputs = [
       this.nameInput, this.categoryInput, this.priceInput,
       this.materialInput, this.styleInput, this.descInput, this.photoInput
@@ -119,14 +123,31 @@ export class AdminProductComponent extends HTMLElement {
     try {
       const res = await fetch(API_URL);
       const products = await res.json();
-      const list = this.querySelector('#productList');
-      list.innerHTML = '';
+      this.productList.innerHTML = '';
+      const defaultOption = document.createElement('option');
+      defaultOption.value = '';
+      defaultOption.textContent = 'Выберите товар';
+      this.productList.appendChild(defaultOption);
+
       products.forEach(prod => {
-        const li = document.createElement('li');
-        li.textContent = `${prod.name} (${prod.category}) - ${prod.price}₽`;
-        li.addEventListener('click', () => this.fillForm(prod));
-        list.appendChild(li);
+        const option = document.createElement('option');
+        option.value = prod.id;
+        option.textContent = `${prod.name} (${prod.category}) - ${prod.price}₽`;
+        this.productList.appendChild(option);
       });
+
+      this.productList.addEventListener('change', (e) => {
+        const selectedProductId = e.target.value;
+        if (selectedProductId) {
+          const selectedProduct = products.find(prod => prod.id == selectedProductId);
+          if (selectedProduct) {
+            this.fillForm(selectedProduct);
+          }
+        } else {
+          this.resetForm();
+        }
+      });
+
     } catch (err) {
       console.error('Ошибка загрузки товаров:', err);
     }

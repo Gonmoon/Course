@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   height: 1000px;
-  background-color: #fff;
+  background-color: var(--color-white);
   min-height: 100vh;
   overflow: hidden;
 }
@@ -52,7 +52,7 @@ form.sign-in-form {
 
 .title {
   font-size: 24px;
-  color: #444;
+  color: var(--color-dark-gray);
   margin-bottom: 10px;
 }
 
@@ -71,13 +71,13 @@ form.sign-in-form {
 
 #password-option {
   background-color: #f0f0f0;
-  color: #000;
+  color: var(--color-black);
 }
 
 .input-field i {
   text-align: center;
   line-height: 55px;
-  color: #acacac;
+  color: var(--color-muted);
   transition: 0.5s;
   font-size: 16px;
 }
@@ -89,23 +89,23 @@ form.sign-in-form {
   line-height: 1;
   font-weight: 600;
   font-size: 16px;
-  color: #333;
+  color: var(--color-dark-gray);
 }
 
 .input-field input::placeholder {
-  color: #aaa;
+  color: var(--color-muted);
   font-weight: 500;
 }
 
 .btn {
   width: 100%;
   max-width: 380px;
-  background-color: #794EFF;
+  background-color: var(--color-success);
   border: none;
   outline: none;
   height: 49px;
   border-radius: 4px;
-  color: #fff;
+  color: var(--color-white);
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px 0;
@@ -114,8 +114,9 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #f98c39;
+  background-color: var(--color-accent-hover);
 }
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -134,7 +135,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #794EFF 0%, #FFA41B 100%);
+  background-image: linear-gradient(-45deg, var(--color-success) 0%, #FFA41B 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
@@ -166,7 +167,7 @@ form.sign-in-form {
 }
 
 .panel .content {
-  color: #fff;
+  color: var(--color-white);
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 }
@@ -185,7 +186,7 @@ form.sign-in-form {
 .btn.transparent {
   margin: 0;
   background: none;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white);
   width: 130px;
   height: 41px;
   font-weight: 600;
@@ -236,32 +237,31 @@ form.sign-in-form {
   pointer-events: all;
 }
 
-#manual-password-fields {
-  min-width: 380px;
-}
-
+#manual-password-fields,
 #auto-password-fields {
   min-width: 380px;
 }
 
 #submit-button:disabled {
-    background-color: #ccc;
-    color: #999;
-    cursor: not-allowed;
+  background-color: var(--color-dark-gray);
+  color: var(--color-muted);
+  cursor: not-allowed;
 }
 
 #agreement {
   color: blue;
   cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-  }
+}
+#agreement:hover {
+  text-decoration: underline;
 }
 
+/* Responsive Breakpoints */
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
   }
+
   .signin-signup {
     width: 100%;
     top: 95%;
@@ -376,9 +376,11 @@ form.sign-in-form {
   .image {
     display: none;
   }
+
   .panel .content {
     padding: 0.5rem 1rem;
   }
+
   .container {
     padding: 1.5rem;
   }
@@ -395,13 +397,8 @@ form.sign-in-form {
 }
 
 @media (max-width: 320px) {
-  #manual-password-fields {
-    min-width: 278px;
-  }
-  
+  #manual-password-fields,
   #auto-password-fields {
     min-width: 278px;
   }
 }
-
-
