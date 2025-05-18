@@ -1,13 +1,16 @@
-@media (max-width: 320px) {
+@media (max-width: 425px) {
 	.wrapper {
-		width: 320px;
+		width: 100%;
   		margin: 0;
+  		display: flex;
+  flex-direction: column;
+  justify-content: center;
 	}
 	.header {
 		&__logo {
 		}
 		&__nav {
-			max-width: 320px;
+			max-width: 425px;
 			position: fixed;
     		top: 0;
     		right: 0;
@@ -190,7 +193,7 @@
 	}
 	.img {
 		&__photo {
-			width: 320px;
+			width: 100%;
 		}
 	}
 	.products {
@@ -210,10 +213,9 @@
 		}
 	}
 	.cart {
-		margin: 0 auto;
-		width: 320px;
-		padding: 8px;
+		width: 300px;
 		&__img {
+			width: 280px;
 		}
 		&__text {
 		}
@@ -224,6 +226,7 @@
 		&__name {
 		}
 		&__button {
+			width: 280px;
 		}
 	}
 	.feature {
@@ -265,7 +268,7 @@
 		}
 	}
 	.services {
-		width: 320px;
+		width: 100%;
 		margin: 0 0 30px 0;
 		flex-wrap: wrap;
 		&__service {
@@ -283,7 +286,7 @@
 		}
 		&__blogs {
 			margin: 0;
-			width: 320px;
+			width: 100%;
 		}
 		&__blog {
 			width: 320px;
@@ -311,6 +314,7 @@
 	.footer {
 		flex-wrap: wrap;
 		padding: 10px 50px;
+		margin: 0;
 		&__skinn {
 			display: none;
 		}
@@ -356,7 +360,10 @@
 		&__network {
 		}
 	}
+	.swiper-slide {
+	  width: 100%;
+	}
 	.swiper-container {
-  		width: 320px;
+		width: 320px;
 	}
 }

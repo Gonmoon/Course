@@ -8,7 +8,7 @@ export class ComponentProduct extends HTMLElement {
       const response = await fetch('http://localhost:3000/design_products');
       const items = await response.json();
 
-      const limitedItems = items.slice(0, 10);
+      const limitedItems = items.slice(0, 7);
 
       this.innerHTML = '';
 
@@ -53,7 +53,7 @@ export class ComponentProduct extends HTMLElement {
       new Swiper(swiperWrapper, {
         loop: true,         
         slidesPerView: 1,
-        spaceBetween: 5,    
+        spaceBetween: 0,    
         navigation: {       
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -65,7 +65,7 @@ export class ComponentProduct extends HTMLElement {
         breakpoints: {
           320: {
             slidesPerView: 1,
-            spaceBetween: 3,
+            spaceBetween: 0,
           },
           768: {
             slidesPerView: 2,

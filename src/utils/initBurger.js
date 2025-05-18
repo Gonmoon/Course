@@ -1,6 +1,6 @@
 export function initBurger() {
 
-  if (window.innerWidth > 321) return; 
+  if (window.innerWidth > 426) return; 
   
   const burger = document.getElementById("burger");
   const burgerIcon = document.getElementById("burgerIcon");
