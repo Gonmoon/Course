@@ -1,4 +1,7 @@
 export function initBurger() {
+
+  if (window.innerWidth > 321) return; 
+  
   const burger = document.getElementById("burger");
   const burgerIcon = document.getElementById("burgerIcon");
   const nav = document.getElementById("main-nav");
@@ -8,6 +11,7 @@ export function initBurger() {
   const closeMenu = () => {
     nav.classList.remove("is-open");
     burger.classList.remove("is-open");
+    burgerIcon.classList.remove("is-open");
     body.style.overflow = "";
     if (widgetProduct) {
       widgetProduct.style.display = "block";

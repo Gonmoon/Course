@@ -107,7 +107,6 @@ section {
     margin: 0 395px 0 0;
   }
   &__nav {
-    margin: 0 405px 0 0;
   }
   &__nav-list {
     display: flex;
@@ -120,6 +119,13 @@ section {
     line-height: 19.6px;
     &::last-child {
       margin: 0;
+    }
+  }
+  &__link {
+    color: var(--color-black);
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--brown-color);
     }
   }
   &__cart {
@@ -503,6 +509,10 @@ section {
   }
   &__link {
     color: var(--brown-color);
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--color-black);
+    }
   }
   &__pages {
     margin: 0 100px 0 0;
