@@ -5,6 +5,8 @@ import { initPopup } from "../utils/initPopup.js"
 import { ComponentPopup } from "../components/component-popup.js";
 customElements.define("widget-popup", ComponentPopup);
 
+import { initAlert } from "../utils/initAlert.js";
+
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
@@ -261,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = getFormData();
 
     await registerUser(formData);
-    alert('Регистрация прошла успешно!');
+    initAlert('Регистрация прошла успешно!');
     form.reset();
     submitBtn.disabled = true;
     nickname.value = '';

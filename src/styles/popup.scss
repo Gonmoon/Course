@@ -42,7 +42,8 @@
 		color: #000;
 		user-select: none;
 		&:hover {
-			color: blue;
+			color: var(--brown-color);
+			cursor: pointer;
 		}
 	}
 	&__content {

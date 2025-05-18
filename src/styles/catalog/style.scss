@@ -115,14 +115,12 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  // background: var(--color-white);
   background: var(--secondary-color);
   border-radius: 10px;
   color: var(--color-black);
   transition: all 0.3s ease;
   cursor: pointer;
-  // box-shadow: 3px 3px 10px var(--color-black);
-  height: 445px;
+  height: 460px;
   animation: fadeIn 0.6s ease-out;
   position: relative;
 }
@@ -292,4 +290,8 @@
 
 .button {
   background: var(--white-color);
+}
+
+.cart {
+  padding: 0;
 }

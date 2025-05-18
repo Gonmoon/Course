@@ -1,6 +1,8 @@
 import { API_URL, ORDER_URL, FEEDBACK_URL } from "../api/api.js";
 import "../styles/feedback/style.scss";
 
+import { initAlert } from "../utils/initAlert.js";
+
 class FeedbackComponent extends HTMLElement {
   constructor() {
     super();
@@ -77,6 +79,7 @@ class FeedbackComponent extends HTMLElement {
               body: JSON.stringify({ nickname, [nickname]: [feedbackText] })
             });
           }
+          initAlert('Отзыв оставлен!');
         } catch (err) {
           console.error('Ошибка при отправке отзыва:', err);
         }
