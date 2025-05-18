@@ -35,7 +35,7 @@ export class ComponentProduct extends HTMLElement {
               <p class="cart__price">${item.price}₽</p>
             </div>
             <p class="cart__name">${item.name}</p>
-            <a href="" class="cart__button">Shop now</a>
+            <a href="http://localhost:5173/catalog.html" class="cart__button button">Shop now</a>
           </div>
         `;
         swiperSlideWrapper.appendChild(swiperSlide);
