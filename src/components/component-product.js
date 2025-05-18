@@ -35,7 +35,7 @@ export class ComponentProduct extends HTMLElement {
               <p class="cart__price">${item.price}₽</p>
             </div>
             <p class="cart__name">${item.name}</p>
-            <a href="http://localhost:5173/catalog.html" class="cart__button button">Shop now</a>
+            <a href="javascript:void(0);" class="cart__button button">Shop now</a>
           </div>
         `;
         swiperSlideWrapper.appendChild(swiperSlide);
@@ -81,6 +81,18 @@ export class ComponentProduct extends HTMLElement {
           delay: 3000,
           disableOnInteraction: false,
         },
+      });
+
+      const shopNowButtons = this.querySelectorAll('.cart__button');
+      shopNowButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const user = localStorage.getItem('user');
+          if (!user) {
+            window.location.href = 'http://localhost:5173/auth.html';
+          } else {
+            window.location.href = 'http://localhost:5173/catalog.html';
+          }
+        });
       });
     } catch (error) {
       console.error('Error fetching data:', error);
