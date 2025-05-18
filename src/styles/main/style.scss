@@ -43,6 +43,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
    // Auth
   --color-accent-hover: var(--color-muted); // #f98c39
 
+
+  // для кнопок
+  --color-accent: #FFF;
   font-family: "Inter";
 }
 
@@ -71,6 +74,22 @@ section {
   &.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+.button {
+  color: var(--brown-color);
+  background: var(--white-color);
+  border: 1px solid var(--color-muted);
+  width: 305px;
+  height: 45px;
+  font-size: 14px;
+  line-height: 19.6px;
+  transition: background 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &:hover {
+    background: var(--color-accent);
   }
 }
 
@@ -249,6 +268,7 @@ section {
     font-family: "STSong";
   }
   &__carts {
+    display: flex;
   }
   &__cart {
   }
@@ -551,5 +571,94 @@ section {
   &.show {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+
+/* -----Swiper----- */
+.swiper-container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 105%;
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  margin-right: 5px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  top: 95% !important;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: brown;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: brown;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  z-index: 9999;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next {
+    right: 300px;
+  }
+
+  .swiper-button-prev {
+    left: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .swiper-button-next {
+    right: 520px;
+  }
+
+  .swiper-button-prev {
+    left: 520px;
   }
 }

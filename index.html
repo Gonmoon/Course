@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script type="module" src="/src/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <widget-header></widget-header>
       <section class="discover">
         <h1 class="discover__text">Discover The<br>Beauty Within</h1>
-        <button class="discover__button">View collection</button>
+        <button class="discover__button button">View collection</button>
         <p class="discover__you">You</p>
       </section>
       <section class="skincare">
         <p class="skincare__header-text">Natural and<br>certified organic</p>
         <h2 class="skincare__h2">Skincare</h2>
         <p class="skincare__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.</p>
-        <button class="skincare__button">Shop all</button>
+        <button class="skincare__button button">Shop all</button>
         <img src="./src/img/skincare1.png" alt="img" class="skincare__img-1">
         <img src="./src/img/skincare2.png" alt="img" class="skincare__img-2">
         <img src="./src/img/skincare3.png" alt="img" class="skincare__img-3">
@@ -33,15 +35,7 @@
         <h2 class="products__header-text">Products</h2>
         <p class="products__text">Healthy skin, wildly you</p>
         <div class="products__carts">
-          <div class="products__cart cart">
-            <img src="./src/img/product.png" alt="img" class="cart__img">
-            <div class="cart__text">
-              <p class="cart__info">Cleanser</p>
-              <p class="cart__price">$ 56.00 USD</p>
-            </div>
-            <p class="cart__name">Anti Acne Face Wash</p>
-            <button class="cart__button">Shop now</button>
-          </div>
+          <widget-product></widget-product>
         </div>
       </section>
       <section class="feature">
@@ -52,7 +46,7 @@
           <h2 class="feature__header">Feature</h2>
           <p class="feature__text">Innovation-led<br>Products</p>
           <p class="feature__info">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint.</p>
-          <button class="feature__button">Read more</button>
+          <button class="feature__button button">Read more</button>
         </div>
       </section>
       <section class="companies">
@@ -94,7 +88,7 @@
             </div>
             <div class="blog__info">
               <p class="blog__text">Which skinceuticals vitamin c serum is right for you</p>
-              <button class="blog__button">Read more</button>
+              <button class="blog__button button">Read more</button>
             </div>
           </div>
           <div class="skinn__blog blog">
@@ -103,7 +97,7 @@
             </div>
             <div class="blog__info">
               <p class="blog__text">Which skinceuticals vitamin c serum is right for you</p>
-              <button class="blog__button">Read more</button>
+              <button class="blog__button button">Read more</button>
             </div>
           </div>
         </div>

@@ -3,9 +3,11 @@ import './styles/main/tablet-style.scss';
 import './styles/main/phone-style.scss';
 
 import { ComponentHeader } from "./components/component-header.js";
+import { ComponentProduct } from "./components/component-product.js";
 import { ComponentFooter } from "./components/component-footer.js";
 
 customElements.define("widget-header", ComponentHeader);
+customElements.define("widget-product", ComponentProduct);
 customElements.define("widget-footer", ComponentFooter);
 
 document.addEventListener("DOMContentLoaded", () => {

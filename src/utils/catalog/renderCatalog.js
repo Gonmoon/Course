@@ -27,8 +27,8 @@ async function renderCatalog(items) {
                 <p>${item.in_stock ? "✓ В наличии" : "✗ Нет в наличии"}</p>
                 <p>Стиль: ${item.style}</p>
                 <div class="catalog-cart__buttons">
-                    <button class="catalog-cart__button favorite" data-id="${item.id}"></button>
-                    <button class="catalog-cart__button cart" data-id="${item.id}">В корзину</button>
+                    <button class="catalog-cart__button favorite button" data-id="${item.id}"></button>
+                    <button class="catalog-cart__button cart button" data-id="${item.id}">В корзину</button>
                 </div>
             </div>
         `;

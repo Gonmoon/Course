@@ -29,7 +29,7 @@
 
 .header-catalog {
   background: var(--color-panel-bg);
-  color: var(--color-white);
+  color: var(--color-black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,13 +66,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px 0 0 0;
   background: var(--color-panel-bg);
 }
 .wrapper-logic__button {
   background-color: var(--color-white);
-  color: var(--color-black);
-  border: none;
+  color: var(--brown-color);
+  border: 1px solid var(--color-muted);
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
@@ -80,10 +79,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .wrapper-logic__button:hover {
-  color: var(--color-white);
-  background-color: var(--color-success);
+  background-color: var(--color-accent);
 }
 .wrapper-logic__checkboxes {
   width: 100%;
@@ -100,7 +99,7 @@
   padding: 20px 80px;
   display: flex;
   flex-wrap: wrap;
-  background: var(--color-panel-bg);
+  background: var(--color-write);
   justify-content: center;
   min-height: 100%;
 }
@@ -116,12 +115,13 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
+  // background: var(--color-white);
+  background: var(--secondary-color);
   border-radius: 10px;
   color: var(--color-black);
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 3px 3px 10px var(--color-black);
+  // box-shadow: 3px 3px 10px var(--color-black);
   height: 445px;
   animation: fadeIn 0.6s ease-out;
   position: relative;
@@ -169,7 +169,7 @@
   border-radius: 0 5px 0 0;
 }
 .catalog-cart__button:hover {
-  background: var(--color-success);
+  background: var(--color-accent);
 }
 
 .no-products {
@@ -288,4 +288,8 @@
 }
 .order__button:hover {
   color: var(--color-black);
+}
+
+.button {
+  background: var(--white-color);
 }
