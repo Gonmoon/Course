@@ -583,7 +583,7 @@ section {
 
 /* -----Swiper----- */
 .swiper-container {
-  max-width: 1340px;
+  width: 1340px;
   margin: 0 auto;
   padding: 10px;
   overflow: hidden;
@@ -647,24 +647,4 @@ section {
 
 .swiper-button-prev {
   left: 10px;
-}
-
-@media (max-width: 768px) {
-  .swiper-button-next {
-    right: 300px;
-  }
-
-  .swiper-button-prev {
-    left: 300px;
-  }
-}
-
-@media (max-width: 320px) {
-  .swiper-button-next {
-    right: 520px;
-  }
-
-  .swiper-button-prev {
-    left: 520px;
-  }
 }
