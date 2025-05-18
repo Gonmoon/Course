@@ -9,7 +9,11 @@ export class ComponentHeader extends HTMLElement {
         this.innerHTML = `
             <header class="header">
                 <img src="./src/img/logo.svg" alt="Logo" class="header__logo">
-                <nav class="header__nav">
+                <button id="burger" class="header__open-main-nav">
+                    <span id="burgerIcon" class="header__burger"></span>
+                    <span class="header__burger-text">Menu</span>
+                </button>
+                <nav id="main-nav" class="header__nav">
                   <ul class="header__nav-list">
                     <li class="header__nav-point">
                       <a href="http://localhost:5173" class="header__link">Home</a>
@@ -30,9 +34,11 @@ export class ComponentHeader extends HTMLElement {
                             <a href="http://localhost:5173/admin.html" class="header__link">Settings</a>
                          </li>`
                     : ""}
+                    <li class="header__nav-point">
+                        <a href="#" id="logoutBtn" class="header__link header__cart-text">${userState ? "LogOut" : "SignIn"}</a>
+                    </li>
                   </ul>
                 </nav>
-                <a href="#" id="logoutBtn" class="header__cart-text">${userState ? "LogOut" : "SignIn"}</a>
             </header>
         `;
 

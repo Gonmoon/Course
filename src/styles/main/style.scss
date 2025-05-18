@@ -144,6 +144,9 @@ section {
     justify-content: center;
     align-items: center;
   }
+  &__open-main-nav {
+    display: none;
+  }
 }
 .discover {
   background: no-repeat right url("../../img/discover.png");

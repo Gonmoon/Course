@@ -1,22 +1,34 @@
 export function initBurger() {
   const burger = document.getElementById("burger");
+  const burgerIcon = document.getElementById("burgerIcon");
   const nav = document.getElementById("main-nav");
   const body = document.body;
+  const widgetProduct = document.querySelector("widget-product");
 
   const closeMenu = () => {
     nav.classList.remove("is-open");
     burger.classList.remove("is-open");
     body.style.overflow = "";
+    if (widgetProduct) {
+      widgetProduct.style.display = "block";
+    }
   };
 
-  burger.addEventListener("click", function (e) {
+  burger.addEventListener("click", function () {
     this.classList.toggle("is-open");
     nav.classList.toggle("is-open");
+    burgerIcon.classList.toggle("is-open");
 
     if (this.classList.contains("is-open")) {
       body.style.overflow = "hidden";
+      if (widgetProduct) {
+        widgetProduct.style.display = "none";
+      }
     } else {
       body.style.overflow = "";
+      if (widgetProduct) {
+        widgetProduct.style.display = "block";
+      }
     }
   });
 
@@ -34,7 +46,6 @@ export function initBurger() {
 
       closeMenu();
 
-      // Ждем завершения анимации 
       nav.addEventListener("transitionend", function () {
         window.location.href = e.target.href;
       }, { once: true });

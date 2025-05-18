@@ -10,8 +10,10 @@ customElements.define("widget-header", ComponentHeader);
 customElements.define("widget-product", ComponentProduct);
 customElements.define("widget-footer", ComponentFooter);
 
+import { initBurger } from "./utils/initBurger.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-  // initBurger();
+  initBurger();
 
   const sections = document.querySelectorAll('section');
 
