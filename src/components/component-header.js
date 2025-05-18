@@ -28,6 +28,9 @@ export class ComponentHeader extends HTMLElement {
                       <li class="header__nav-point">
                           <a href="http://localhost:5173/feedback.html" class="header__link">Feedback</a>
                       </li>
+                      <li class="header__nav-point">
+                          <a href="http://localhost:5173/user.html" class="header__link">Account</a>
+                      </li>
                       ` : ""}
                     ${role === "admin" ?
                         `<li class="header__nav-point">
