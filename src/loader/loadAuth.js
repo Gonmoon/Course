@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         window.location.href = '/';
       } else {
-        alert('Неверный логин или пароль');
+        initAlert('Неверный логин или пароль');
       }
     } catch (err) {
       alert(`Ошибка входа: ${err.message}`);
@@ -204,10 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!nameValid) showError(firstName, 'Введите корректное имя (только буквы, пробелы и дефисы)');
 
     const lastNameValid = /^[a-zA-Zа-яА-ЯёЁ\s-]+$/.test(lastName.value.trim());
-    if (!lastNameValid) showError(lastName, 'Введите корректную фамилию (только буквы, пробелы и дефисы)');
+    if (!lastNameValid) showError(lastName, 'Введите корректную фамилию (только буквы, пробелы)');
 
     const middleNameValid = middleName.value.trim() === '' || /^[a-zA-Zа-яА-ЯёЁ\s-]+$/.test(middleName.value.trim());
-    if (middleName.value.trim() && !middleNameValid) showError(middleName, 'Введите корректное отчество (только буквы, пробелы и дефисы)');
+    if (middleName.value.trim() && !middleNameValid) showError(middleName, 'Введите корректное отчество (только буквы, пробелы)');
 
     const phoneValid = /^\+375(25|29|33|44|17)\d{7}$/.test(phone.value.trim());
     if (!phoneValid) showError(phone, 'Введите корректный номер РБ: +375XXXXXXXXX');
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   agreement.addEventListener('click', (e) => {
-  	initPopup("Agreement", "Lorem");
+  	initPopup("Agreement", "By accessing and using this website, you agree to comply with the terms and conditions set forth in this User Agreement. The information, services, and products provided on this site are intended for personal, non-commercial use. Users must not engage in any activities that may disrupt or damage the website or compromise its security. All content, including text, images, and trademarks, is the property of the site owner and may not be used without permission. The company reserves the right to modify this agreement at any time, and continued use of the site constitutes acceptance of those changes.");
   })
 
   form.addEventListener('submit', async e => {

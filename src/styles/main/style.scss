@@ -420,6 +420,7 @@ section {
     width: 518px;
     height: 518px;
     background: url("../../img/services3.png");
+    transition: opacity 0.3s ease, filter 0.3s ease;
     &_first {
       width: 403px;
       background: url("../../img/services1.png");
@@ -427,8 +428,7 @@ section {
     &_second {
       background: url("../../img/services2.png");
     }
-    transition: opacity 0.3s ease, filter 0.3s ease;
-
+    
     &:hover {
       opacity: 0.8;
       filter: brightness(0.8) sepia(1) hue-rotate(10deg) saturate(300%) contrast(0.8)
