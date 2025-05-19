@@ -37,7 +37,7 @@ export class ComponentUser extends HTMLElement {
             ${this.renderField('password', 'Пароль', 'text', 'form-password')}
   
             <button type="button" id="updateBtn" class="product-form__button product-form__button--update button" data-i18n="btn-update">Обновить</button>
-            <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button" data-i18n="btn-delete">Удалить</button>
+            <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button" data-i18n="btn-delete">Сброс настроек</button>
           </form>
         </div>
       </div>
@@ -117,24 +117,14 @@ export class ComponentUser extends HTMLElement {
     }
   }
 
-  async handleDelete() { // изменить, только LS
-    const id = +this.querySelector("#user-id").value;
+  async handleDelete() {
+    localStorage.setItem("theme", "light");
+    localStorage.setItem("lang", "en");
+    initAlert("Установлены значения по умолчанию");
 
-    try {
-      const res = await fetch(`${USERS_URL}/${id}`, {
-        method: "DELETE",
-      });
-
-      if (res.ok) {
-        localStorage.removeItem("user");
-        initAlert("Пользователь удалён. localStorage очищен.", "success");
-        this.innerHTML = `<p class="container-product__title">Пользователь удалён</p>`;
-      } else {
-        throw new Error();
-      }
-    } catch {
-      initAlert("Ошибка при удалении", "error");
-    }
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 
   getFormData() {
