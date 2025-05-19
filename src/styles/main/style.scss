@@ -49,6 +49,26 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
   font-family: "Inter";
 }
 
+body[data-theme="dark"] {
+  --secondary-color: #2c2c2c;
+  --brown-color: #a58c73;
+  --white-color: #1e1e1e;
+
+  --color-muted: #888;
+  --color-black: #fff;
+  --color-red: #ff4c4c;
+  --color-white: #1e1e1e;
+  --color-dark-gray: #1e1e1e;
+
+  --color-panel-bg: #1c1c1c;
+  --color-success: #6f4e37;
+  --color-accent-hover: #555;
+  --color-accent: #fff;
+
+  background-color: var(--white-color);
+  color: var(--color-black);
+}
+
 /*-----Отзывчивость-----*/
 $maxWidth: 1340;
 @function adaptNum($Size: 0, $MinSize: 1) {
