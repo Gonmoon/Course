@@ -15,9 +15,11 @@ class AdminFeedbackComponent extends HTMLElement {
     this.innerHTML = `
       <div class="container">
         <div class="container__wrapper">
-          <select id="userSelect" class="container__select"></select>
+          <select id="userSelect" class="container__select">
+            <option value="" data-i18n="admin-feedback-all-users">Все пользователи</option>
+          </select>
           <select id="productSelect" class="container__select">
-            <option value="">Все товары</option>
+            <option value="" data-i18n="admin-feedback-all-products">Все товары</option>
           </select>
         </div>
         <ul class="container__feedbacks" id="feedbacks"></ul>
@@ -37,10 +39,9 @@ class AdminFeedbackComponent extends HTMLElement {
       const res = await fetch(FEEDBACK_URL);
       const data = await res.json();
       const userSelect = this.querySelector('#userSelect');
-      userSelect.innerHTML = `<option value="">Все пользователи</option>`;
 
-      data.forEach(entry => {
-        const nickname = entry.nickname;
+      const nicknames = [...new Set(data.map(entry => entry.nickname))];
+      nicknames.forEach(nickname => {
         const option = document.createElement('option');
         option.value = nickname;
         option.textContent = nickname;
@@ -73,16 +74,16 @@ class AdminFeedbackComponent extends HTMLElement {
     const selectedProduct = this.querySelector('#productSelect').value;
     const list = this.querySelector('#feedbacks');
     list.innerHTML = '';
-  
+
     try {
       const res = await fetch(FEEDBACK_URL);
       const data = await res.json();
-  
+
       data.forEach(entry => {
         const nickname = entry.nickname;
         const feedbacks = entry[nickname];
         const feedbackId = entry.id;
-  
+
         if (Array.isArray(feedbacks)) {
           if (!selectedUser || selectedUser === nickname) {
             feedbacks.forEach((fb, index) => {
@@ -90,13 +91,19 @@ class AdminFeedbackComponent extends HTMLElement {
                 !selectedProduct ||
                 fb.startsWith(`${selectedProduct}:`) ||
                 fb.startsWith(`${selectedProduct} —`);
-  
+
               if (matchesProduct) {
                 const li = document.createElement('li');
                 li.className = 'container__feedback';
                 li.innerHTML = `
                   <span>${nickname}: ${fb}</span>
-                  <button class="container__delete button" data-user="${nickname}" data-id="${feedbackId}" data-index="${index}">Удалить</button>
+                  <button 
+                    class="container__delete button" 
+                    data-user="${nickname}" 
+                    data-id="${feedbackId}" 
+                    data-index="${index}"
+                    data-i18n="admin-feedback-delete"
+                  >Удалить</button>
                 `;
                 list.appendChild(li);
               }
@@ -104,25 +111,25 @@ class AdminFeedbackComponent extends HTMLElement {
           }
         }
       });
-  
+
       list.querySelectorAll('.container__delete').forEach(button => {
         button.addEventListener('click', async (e) => {
           const nickname = e.target.dataset.user;
           const feedbackId = e.target.dataset.id;
           const index = Number(e.target.dataset.index);
-  
+
           try {
             const res = await fetch(`${FEEDBACK_URL}/${feedbackId}`);
             const entry = await res.json();
             const updated = [...entry[nickname]];
             updated.splice(index, 1);
-  
+
             await fetch(`${FEEDBACK_URL}/${feedbackId}`, {
               method: 'PATCH',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ [nickname]: updated })
             });
-  
+
             this.loadFeedbacks();
             initAlert("Отзыв удалён!", 3000);
           } catch (err) {

@@ -7,42 +7,44 @@ export class ComponentHeader extends HTMLElement {
         let role = userState ? JSON.parse(userState).role : "";
 
         this.innerHTML = `
-            <header class="header">
-                <img src="./src/img/logo.svg" alt="Logo" class="header__logo">
-                <button id="burger" class="header__open-main-nav">
-                    <span id="burgerIcon" class="header__burger"></span>
-                    <span class="header__burger-text">Menu</span>
-                </button>
-                <nav id="main-nav" class="header__nav">
-                  <ul class="header__nav-list">
-                    <li class="header__nav-point">
-                      <a href="http://localhost:5173" class="header__link">Home</a>
-                    </li>
-                    <li class="header__nav-point">
-                      <a href="http://localhost:5173/about.html" class="header__link">About</a>
-                    </li>
-                    ${userState ? `
-                      <li class="header__nav-point">
-                          <a href="http://localhost:5173/catalog.html" class="header__link">Buy</a>
-                      </li>
-                      <li class="header__nav-point">
-                          <a href="http://localhost:5173/feedback.html" class="header__link">Feedback</a>
-                      </li>
-                      <li class="header__nav-point">
-                          <a href="http://localhost:5173/user.html" class="header__link">Account</a>
-                      </li>
-                      ` : ""}
-                    ${role === "admin" ?
-                        `<li class="header__nav-point">
-                            <a href="http://localhost:5173/admin.html" class="header__link">Settings</a>
-                         </li>`
-                    : ""}
-                    <li class="header__nav-point">
-                        <a href="#" id="logoutBtn" class="header__link header__cart-text">${userState ? "LogOut" : "SignIn"}</a>
-                    </li>
-                  </ul>
-                </nav>
-            </header>
+          <header class="header">
+            <img src="./src/img/logo.svg" alt="Logo" class="header__logo">
+            <button id="burger" class="header__open-main-nav">
+              <span id="burgerIcon" class="header__burger"></span>
+              <span class="header__burger-text" data-i18n="menu-text">Menu</span>
+            </button>
+            <nav id="main-nav" class="header__nav">
+              <ul class="header__nav-list">
+                <li class="header__nav-point">
+                  <a href="http://localhost:5173" class="header__link" data-i18n="nav-home">Home</a>
+                </li>
+                <li class="header__nav-point">
+                  <a href="http://localhost:5173/about.html" class="header__link" data-i18n="nav-about">About</a>
+                </li>
+                ${userState ? `
+                  <li class="header__nav-point">
+                    <a href="http://localhost:5173/catalog.html" class="header__link" data-i18n="nav-buy">Buy</a>
+                  </li>
+                  <li class="header__nav-point">
+                    <a href="http://localhost:5173/feedback.html" class="header__link" data-i18n="nav-feedback">Feedback</a>
+                  </li>
+                  <li class="header__nav-point">
+                    <a href="http://localhost:5173/user.html" class="header__link" data-i18n="nav-account">Account</a>
+                  </li>
+                ` : ""}
+                ${role === "admin" ? `
+                  <li class="header__nav-point">
+                    <a href="http://localhost:5173/admin.html" class="header__link" data-i18n="nav-settings">Settings</a>
+                  </li>
+                ` : ""}
+                <li class="header__nav-point">
+                  <a href="#" id="logoutBtn" class="header__link header__cart-text" data-i18n="${userState ? "nav-logout" : "nav-signin"}">
+                    ${userState ? "LogOut" : "SignIn"}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </header>
         `;
 
         const logoutBtn = document.getElementById('logoutBtn');

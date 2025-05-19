@@ -7,8 +7,13 @@
     <title>Admin</title>
     <script type="module" src="/src/main.js" defer></script>
     <script type="module" src="/src/components/admin/component-admin-feedback.js" defer></script>
+    <script src="./src/translate.js" defer></script>
   </head>
   <body>
+    <div class="language-switcher">
+      <button data-lang="en">EN</button>
+      <button data-lang="ru">RU</button>
+    </div>
     <widget-header></widget-header>
     <admin-feedback-component></admin-feedback-component>
     <management-product-component></management-product-component>

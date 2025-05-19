@@ -35,8 +35,14 @@ class FeedbackComponent extends HTMLElement {
           <select name="product" id="product" class="container__select">
             ${optionsHtml}
           </select>
-          <textarea name="feedback" id="text" class="container__text" placeholder="Ваш отзыв..."></textarea>
-          <button class="container__button button">Send</button>
+          <textarea
+            name="feedback"
+            id="text"
+            class="container__text"
+            placeholder="Ваш отзыв..."
+            data-i18n-placeholder="feedback-placeholder"
+          ></textarea>
+          <button class="container__button button" data-i18n="btn-send">Send</button>
         </div>
         <ul class="container__feedbacks" id="feedbacks"></ul>
       </div>

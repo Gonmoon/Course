@@ -28,29 +28,30 @@ export class AdminProductComponent extends HTMLElement {
   async connectedCallback() {
     this.innerHTML = `
       <div class="container-product">
-        <h2 class="container-product__title">Управление товарами</h2>
+        <h2 class="container-product__title" data-i18n="product-manage-title">Управление товарами</h2>
         <div class="container-product__wrapper">
           <select id="productList" class="container__select">
-            <option value="">Выберите товар</option> <!-- Default option -->
+            <option value="" data-i18n="product-select-default">Выберите товар</option>
           </select>
           <form id="productForm" class="product-form">
             <input type="hidden" id="product-id" class="product-form__input" />
-
-            ${this.renderField('name', 'Название', 'text')}
-            ${this.renderField('category', 'Категория', 'text')}
-            ${this.renderField('price', 'Цена', 'number')}
-            ${this.renderField('material', 'Материал', 'text')}
-            ${this.renderField('style', 'Стиль', 'text')}
-            ${this.renderTextarea('description', 'Описание')}
-            ${this.renderField('photo_url', 'Ссылка на изображение', 'url')}
-
+    
+            ${this.renderField('name', 'Название', 'text', 'product-field-name')}
+            ${this.renderField('category', 'Категория', 'text', 'product-field-category')}
+            ${this.renderField('price', 'Цена', 'number', 'product-field-price')}
+            ${this.renderField('material', 'Материал', 'text', 'product-field-material')}
+            ${this.renderField('style', 'Стиль', 'text', 'product-field-style')}
+            ${this.renderTextarea('description', 'Описание', 'product-field-description')}
+            ${this.renderField('photo_url', 'Ссылка на изображение', 'url', 'product-field-photo')}
+    
             <label class="product-form__label">
-              <input type="checkbox" id="in_stock" class="product-form__checkbox" /> В наличии
+              <input type="checkbox" id="in_stock" class="product-form__checkbox" />
+              <span data-i18n="product-field-instock">В наличии</span>
             </label>
-
-            <button type="button" id="addBtn" class="product-form__button product-form__button--add button" disabled>Добавить</button>
-            <button type="button" id="updateBtn" class="product-form__button product-form__button--update button" disabled>Обновить</button>
-            <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button" disabled>Удалить</button>
+    
+            <button type="button" id="addBtn" class="product-form__button product-form__button--add button" data-i18n="product-btn-add" disabled>Добавить</button>
+            <button type="button" id="updateBtn" class="product-form__button product-form__button--update button" data-i18n="product-btn-update" disabled>Обновить</button>
+            <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button" data-i18n="product-btn-delete" disabled>Удалить</button>
           </form>
         </div>
       </div>
@@ -65,18 +66,18 @@ export class AdminProductComponent extends HTMLElement {
     this.loadProducts();
   }
 
-  renderField(id, placeholder, type) {
+  renderField(id, placeholder, type, i18nKey) {
     return `
       <div class="product-form__field">
-        <input type="${type}" id="${id}" class="product-form__input" placeholder="${placeholder}" />
+        <input type="${type}" id="${id}" data-i18n="${i18nKey}" class="product-form__input" placeholder="${placeholder}" />
       </div>
     `;
   }
 
-  renderTextarea(id, placeholder) {
+  renderTextarea(id, placeholder, i18nKey) {
     return `
       <div class="product-form__field">
-        <textarea id="${id}" class="product-form__textarea" placeholder="${placeholder}"></textarea>
+        <textarea id="${id}" data-i18n="${i18nKey}" class="product-form__textarea" placeholder="${placeholder}"></textarea>
       </div>
     `;
   }

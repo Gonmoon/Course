@@ -2,7 +2,6 @@ import { USERS_URL } from "../api/api.js";
 import "../styles/adminProduct.scss";
 import { initAlert } from "../utils/initAlert.js";
 
-
 export class ComponentUser extends HTMLElement {
   constructor() {
     super();
@@ -13,10 +12,10 @@ export class ComponentUser extends HTMLElement {
   connectedCallback() {
     const stored = localStorage.getItem("user");
     if (!stored) {
-      this.innerHTML = `<p class="container-product__title">Пользователь не авторизован</p>`;
+      this.innerHTML = `<p class="container-product__title" data-i18n="not-authorized">Пользователь не авторизован</p>`;
       return;
     }
-
+  
     this.currentUser = JSON.parse(stored);
     this.renderUI();
     this.loadUserData();
@@ -30,24 +29,24 @@ export class ComponentUser extends HTMLElement {
         <div class="container-product__wrapper">
           <form id="userForm" class="product-form">
             <input type="hidden" id="user-id" class="product-form__input" />
-
-            ${this.renderField('firstName', 'Имя', 'text')}
-            ${this.renderField('phone', 'Телефон', 'text')}
-            ${this.renderField('email', 'Email', 'email')}
-            ${this.renderField('nickname', 'Никнейм', 'text')}
-            ${this.renderField('password', 'Пароль', 'text')}
-
-            <button type="button" id="updateBtn" class="product-form__button product-form__button--update button">Обновить</button>
-            <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button">Удалить</button>
+  
+            ${this.renderField('firstName', 'Имя', 'text', 'form-firstname')}
+            ${this.renderField('phone', 'Телефон', 'text', 'form-phone')}
+            ${this.renderField('email', 'Email', 'email', 'form-email')}
+            ${this.renderField('nickname', 'Никнейм', 'text', 'form-nickname')}
+            ${this.renderField('password', 'Пароль', 'text', 'form-password')}
+  
+            <button type="button" id="updateBtn" class="product-form__button product-form__button--update button" data-i18n="btn-update">Обновить</button>
+            <button type="button" id="deleteBtn" class="product-form__button product-form__button--delete button" data-i18n="btn-delete">Удалить</button>
           </form>
         </div>
       </div>
     `;
   }
 
-  renderField(id, label, type = 'text') {
+  renderField(id, label, type = 'text', i18nKey = '') {
     return `
-      <label for="${id}" class="product-form__label">${label}</label>
+      <label for="${id}" class="product-form__label" ${i18nKey ? `data-i18n="${i18nKey}"` : ''}>${label}</label>
       <input type="${type}" id="${id}" class="product-form__input" />
     `;
   }

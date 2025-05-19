@@ -6,89 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skinn</title>
     <script type="module" src="/src/main.js" defer></script>
+    <script src="./src/translate.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   </head>
   <body>
+    <div class="language-switcher">
+      <button data-lang="en">EN</button>
+      <button data-lang="ru">RU</button>
+    </div>
+
     <div class="wrapper">
       <widget-header></widget-header>
+
       <section class="discover">
-        <h1 class="discover__text">Discover The<br>Beauty Within</h1>
-        <a href="http://localhost:5173/about.html" class="discover__button button">View collection</a>
+        <h1 class="discover__text" data-i18n="discover-text">Discover The<br>Beauty Within</h1>
+        <a href="http://localhost:5173/about.html" class="discover__button button" data-i18n="view-collection">View collection</a>
         <p class="discover__you">You</p>
       </section>
+
       <section class="skincare">
-        <p class="skincare__header-text">Natural and<br>certified organic</p>
-        <h2 class="skincare__h2">Skincare</h2>
-        <p class="skincare__text">Experience gentle and effective skincare solutions that respect your skin and the planet.</p>
-        <a href="http://localhost:5173/about.html" class="skincare__button button">Shop all</a>
+        <p class="skincare__header-text" data-i18n="skincare-header">Natural and<br>certified organic</p>
+        <h2 class="skincare__h2" data-i18n="skincare-title">Skincare</h2>
+        <p class="skincare__text" data-i18n="skincare-desc">Experience gentle and effective skincare solutions that respect your skin and the planet.</p>
+        <a href="http://localhost:5173/about.html" class="skincare__button button" data-i18n="skincare-shop">Shop all</a>
         <img src="./src/img/skincare1.png" alt="img" class="skincare__img-1">
         <img src="./src/img/skincare2.png" alt="img" class="skincare__img-2">
         <img src="./src/img/skincare3.png" alt="img" class="skincare__img-3">
         <img src="./src/img/skincare4.png" alt="img" class="skincare__img-4">
         <img src="./src/img/skincare5.png" alt="img" class="skincare__img-5">
       </section>
+
       <div class="img">
         <img src="./src/img/img.png" alt="img" class="img__photo">
       </div>
+
       <section class="products">
-        <h2 class="products__header-text">Products</h2>
-        <p class="products__text">Healthy skin, wildly you</p>
+        <h2 class="products__header-text" data-i18n="products-header">Products</h2>
+        <p class="products__text" data-i18n="products-sub">Healthy skin, wildly you</p>
         <div class="products__carts">
           <widget-product></widget-product>
         </div>
       </section>
+
       <section class="feature">
         <div class="feature__img">
           <img src="./src/img/feature.png" alt="img">
         </div>
         <div class="feature__main">
-          <h2 class="feature__header">Feature</h2>
-          <p class="feature__text">Innovation-led<br>Products</p>
-          <p class="feature__info">Our featured products are crafted using advanced skincare technology, combining nature with science to deliver real, visible results.</p>
-          <a href="http://localhost:5173/about.html" class="feature__button button">Read more</a>
+          <h2 class="feature__header" data-i18n="feature-header">Feature</h2>
+          <p class="feature__text" data-i18n="feature-text">Innovation-led<br>Products</p>
+          <p class="feature__info" data-i18n="feature-info">Our featured products are crafted using advanced skincare technology, combining nature with science to deliver real, visible results.</p>
+          <a href="http://localhost:5173/about.html" class="feature__button button" data-i18n="read-more">Read more</a>
         </div>
       </section>
+
       <section class="companies">
-        <h2 class="companies__text">“We partner with trusted brands to bring you premium quality skincare products that are clean, effective, and ethical.”</h2>
+        <h2 class="companies__text" data-i18n="companies-text">“We partner with trusted brands to bring you premium quality skincare products that are clean, effective, and ethical.”</h2>
         <ul class="companies__logos">
-          <li class="companies__logo">
-            <img src="./src/img/companies1.svg" alt="logo" class="companies__img">
-          </li>
-          <li class="companies__logo">
-            <img src="./src/img/companies2.svg" alt="logo" class="companies__img">
-          </li>
-          <li class="companies__logo">
-            <img src="./src/img/companies3.svg" alt="logo" class="companies__img">
-          </li>
-          <li class="companies__logo">
-            <img src="./src/img/companies4.svg" alt="logo" class="companies__img">
-          </li>
+          <li class="companies__logo"><img src="./src/img/companies1.svg" alt="logo" class="companies__img"></li>
+          <li class="companies__logo"><img src="./src/img/companies2.svg" alt="logo" class="companies__img"></li>
+          <li class="companies__logo"><img src="./src/img/companies3.svg" alt="logo" class="companies__img"></li>
+          <li class="companies__logo"><img src="./src/img/companies4.svg" alt="logo" class="companies__img"></li>
         </ul>
       </section>
     </div>
-      <div class="services">
-        <div class="services__service services__service_first">
-          <a href="http://localhost:5173/about.html" class="services__link">Body Wash</a>
-        </div>
-        <div class="services__service services__service_second">
-          <a href="http://localhost:5173/about.html" class="services__link">Face wash</a>
-        </div>
-        <div class="services__service">
-          <a href="http://localhost:5173/about.html" class="services__link">Cleanser</a>
-        </div>
+
+    <div class="services">
+      <div class="services__service services__service_first">
+        <a href="http://localhost:5173/about.html" class="services__link" data-i18n="body-wash">Body Wash</a>
       </div>
+      <div class="services__service services__service_second">
+        <a href="http://localhost:5173/about.html" class="services__link" data-i18n="face-wash">Face wash</a>
+      </div>
+      <div class="services__service">
+        <a href="http://localhost:5173/about.html" class="services__link" data-i18n="cleanser">Cleanser</a>
+      </div>
+    </div>
+
     <div class="wrapper">
       <section class="skinn">
-        <h2 class="skinn__header-text">Skinn blog</h2>
+        <h2 class="skinn__header-text" data-i18n="skinn-blog-header">Skinn blog</h2>
         <div class="skinn__blogs">
           <div class="skinn__blog blog">
             <div class="blog__img">
               <img src="./src/img/blog1.png" alt="img">
             </div>
             <div class="blog__info">
-              <p class="blog__text">Which skinceuticals vitamin c serum is right for you</p>
-              <a href="http://localhost:5173/about.html" class="blog__button button">Read more</a>
+              <p class="blog__text" data-i18n="blog-text-1">Which skinceuticals vitamin c serum is right for you</p>
+              <a href="http://localhost:5173/about.html" class="blog__button button" data-i18n="read-more">Read more</a>
             </div>
           </div>
           <div class="skinn__blog blog">
@@ -96,14 +102,16 @@
               <img src="./src/img/blog2.png" alt="img">
             </div>
             <div class="blog__info">
-              <p class="blog__text">Which skinceuticals vitamin c serum is right for you</p>
-              <a href="http://localhost:5173/about.html" class="blog__button button">Read more</a>
+              <p class="blog__text" data-i18n="blog-text-1">Which skinceuticals vitamin c serum is right for you</p>
+              <a href="http://localhost:5173/about.html" class="blog__button button" data-i18n="read-more">Read more</a>
             </div>
           </div>
         </div>
       </section>
+
       <widget-footer></widget-footer>
     </div>
-    <button id="scrollToTop" class="scroll-to-top">↑</button>
+
+    <button id="scrollToTop" class="scroll-to-top" data-i18n="scroll-top">↑</button>
   </body>
 </html>
