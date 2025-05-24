@@ -51,13 +51,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const currentTheme = localStorage.getItem("theme") || "light";
   document.body.setAttribute("data-theme", currentTheme);
-
+  
+  function updateImagesForTheme(theme) {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      if (img.hasAttribute('data-dark-src')) {
+        img.src = theme === 'dark' ? img.getAttribute('data-dark-src') : img.getAttribute('data-light-src') || src;
+      }
+    });
+  }
+  
+  updateImagesForTheme(currentTheme);
+  
   const toggleThemeBtn = document.getElementById("toggle-theme");
   if (toggleThemeBtn) {
     toggleThemeBtn.addEventListener("click", () => {
       const newTheme = document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
       document.body.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
+      
+      updateImagesForTheme(newTheme);
     });
   }
 });
