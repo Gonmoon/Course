@@ -366,11 +366,16 @@
 	.swiper-container {
 		width: 320px;
 	}
+	.scroll-to-top {
+		bottom: 60px;
+		right: 20px;
+	}
 	.language-switcher  {
   		position: fixed;
   		z-index: 1000;
   		display: flex;
-  		left: 35%;
+  		left: 0;
+  		bottom: 0;
   		& button {
   		  font-size: 14px;
   		  padding: 0 2px;
@@ -380,5 +385,11 @@
   		    border: 1px solid var(--brown-color);
   		  }
   		}
+	}
+	.accessibility-panel>label {
+		display: flex;
+		width: 100%;
+		margin: 5px 0;
+		color: var(--color-black);
 	}
 }
