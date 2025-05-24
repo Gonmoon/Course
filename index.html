@@ -7,6 +7,7 @@
     <title>Skinn</title>
     <script type="module" src="/src/main.js" defer></script>
     <script src="./src/translate.js" defer></script>
+    <script src="./src/accessibility.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   </head>
@@ -15,6 +16,28 @@
       <button data-lang="en">EN</button>
       <button data-lang="ru">RU</button>
       <button id="toggle-theme">🌓</button>
+      <div class="accessibility-panel">
+        <label data-i18n="label.font_size">Font size:
+          <select id="font-size">
+            <option value="normal" data-i18n="font.normal">Normal</option>
+            <option value="large" data-i18n="font.large">Large</option>
+            <option value="xlarge" data-i18n="font.xlarge">Extra Large</option>
+          </select>
+        </label>
+        <label data-i18n="label.color_scheme">Color scheme:
+          <select id="color-scheme">
+            <option value="white-black" data-i18n="scheme.white_black">White on Black</option>
+            <option value="green-black" data-i18n="scheme.green_black">Green on Black</option>
+            <option value="black-white" data-i18n="scheme.black_white">Black on White</option>
+            <option value="brown-beige" data-i18n="scheme.brown_beige">Brown on Beige</option>
+            <option value="blue-darkblue" data-i18n="scheme.blue_darkblue">Dark Blue on Light Blue</option>
+          </select>
+        </label>
+        <label data-i18n="label.disable_images">
+          <input type="checkbox" id="disable-images">
+          Disable images
+        </label>
+      </div>
     </div>
 
     <div class="wrapper">

@@ -46,6 +46,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
   // для кнопок
   --color-accent: #FFF;
+
+  --font-scale: 1;
   font-family: "Inter";
 }
 
@@ -97,15 +99,14 @@ section {
   }
 }
 
-
 .button {
   color: var(--brown-color);
   background: var(--white-color);
   border: 1px solid var(--color-muted);
   width: 305px;
   height: 45px;
-  font-size: 14px;
-  line-height: 19.6px;
+  font-size: calc(14px * var(--font-scale));
+  line-height: calc(19.6px * var(--font-scale));
   transition: background 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   cursor: pointer;
 
@@ -136,8 +137,8 @@ section {
   }
   &__nav-point {
     margin: 0 40px 0 0;
-    font-size: 17px;
-    line-height: 19.6px;
+    font-size: calc(17px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
     &::last-child {
       margin: 0;
     }
@@ -153,8 +154,8 @@ section {
     display: flex;
   }
   &__cart-text {
-    font-size: 17px;
-    line-height: 19.6px;
+    font-size: calc(17px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,8 +165,8 @@ section {
     width: 24px;
     height: 24px;
     background: var(--secondary-color);
-    font-size: 11px;
-    line-height: 24px;
+    font-size: calc(11px * var(--font-scale));
+    line-height: calc(24px * var(--font-scale));
     color: var(--brown-color);
     display: flex;
     justify-content: center;
@@ -195,8 +196,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
     text-align: center;
   }
   &__you {
@@ -224,7 +225,6 @@ section {
     font-family: "STSong";
   }
   &__h2 {
-
     font-size: 137px;
     line-height: 112px;
     font-family: "Style Script";
@@ -234,8 +234,8 @@ section {
   &__text {
     margin: 20px 0 0 0;
     text-align: center;
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
     width: 649px;
   }
   &__button {
@@ -249,8 +249,8 @@ section {
     border-radius: 73px;
     width: 95px;
     height: 45px;
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
   }
   &__img-1 {
     position: absolute;
@@ -296,7 +296,6 @@ section {
     line-height: 112px;
     font-family: "Style Script";
     color: var(--brown-color);
-
   }
   &__text {
     margin: 5px 0 0 0;
@@ -331,17 +330,17 @@ section {
     justify-content: space-between;
   }
   &__info {
-    font-size: 13px;
-    line-height: 19.6px;
+    font-size: calc(13px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
   }
   &__price {
-    font-size: 14px;
-    line-height: 19.5px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.5px * var(--font-scale));
   }
   &__name {
     margin: 6px 0 0 0;
-    font-size: 19px;
-    line-height: 26px;
+    font-size: calc(19px * var(--font-scale));
+    line-height: calc(26px * var(--font-scale));
     height: 60px;
   }
   &__button {
@@ -353,8 +352,8 @@ section {
     border: 1px solid var(--color-muted);
     width: 305px;
     height: 45px;
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
   }
 }
 .feature {
@@ -388,8 +387,8 @@ section {
   }
   &__info {
     margin: 25px 0 0 0;
-    font-size: 17px;
-    line-height: 30.6px;
+    font-size: calc(17px * var(--font-scale));
+    line-height: calc(30.6px * var(--font-scale));
     text-align: center;
     width: 460px;
   }
@@ -403,8 +402,8 @@ section {
     border: 1px solid var(--color-muted);
     width: 115px;
     height: 45px;
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
   }
 }
 .companies {
@@ -414,8 +413,8 @@ section {
   align-items: center;
   flex-direction: column;
   &__text {
-    font-size: 28px;
-    line-height: 39.2px;
+    font-size: calc(28px * var(--font-scale));
+    line-height: calc(39.2px * var(--font-scale));
     text-align: center;
     width: 780px;
   }
@@ -452,7 +451,7 @@ section {
     &_second {
       background: url("../../img/services2.png");
     }
-    
+
     &:hover {
       opacity: 0.8;
       filter: brightness(0.8) sepia(1) hue-rotate(10deg) saturate(300%) contrast(0.8)
@@ -470,8 +469,8 @@ section {
     justify-content: center;
     align-items: center;
     border: 1px solid #FFF;
-    font-size: 13px;
-    line-height: 19.6px;
+    font-size: calc(13px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
   }
 }
 
@@ -479,8 +478,8 @@ section {
   margin: 0 0 adaptNum(127) 0;
   &__header-text {
     font-family: "STSong";
-    font-size: 66px;
-    line-height: 98px;
+    font-size: calc(66px * var(--font-scale));
+    line-height: calc(98px * var(--font-scale));
     text-align: center;
   }
   &__blogs {
@@ -504,22 +503,26 @@ section {
   }
   &__text {
     font-family: "STSong";
-    font-size: 28px;
-    line-height: 36.4px;
+    font-size: calc(28px * var(--font-scale));
+    line-height: calc(36.4px * var(--font-scale));
+  }
+  &__date {
+    margin: 14px 0 0 0;
+    font-size: calc(13px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
   }
   &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 58px 0 0 0;
+    margin: 10px 0 0 0;
+    width: 120px;
+    height: 45px;
     color: var(--brown-color);
     background: var(--white-color);
     border: 1px solid var(--color-muted);
-    border-radius: 166px;
-    width: 115px;
-    height: 45px;
-    font-size: 14px;
-    line-height: 19.6px;
+    font-size: calc(14px * var(--font-scale));
+    line-height: calc(19.6px * var(--font-scale));
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .footer {
@@ -527,8 +530,8 @@ section {
   width: 100%;
   height: 353px;
   background: var(--secondary-color);
-  font-size: 14px;
-  line-height: 19.6px;
+  font-size: calc(14px * var(--font-scale));
+  line-height: calc(19.6px * var(--font-scale));
   padding: 50px;
   margin: 0 0 60px 0;
   &__skinn {
@@ -561,8 +564,8 @@ section {
   }
   &__header {
     font-family: "STSong";
-    font-size: 27px;
-    line-height: 39.2px;
+    font-size: calc(27px * var(--font-scale));
+    line-height: calc(39.2px * var(--font-scale));
     margin: 0 0 29px 0;
   }
   &__lists {
@@ -578,7 +581,6 @@ section {
   }
   &__contacts {
     margin: 0 100px 0 0;
-    
   }
   &__contact {
     color: var(--brown-color);
@@ -603,6 +605,7 @@ section {
     }
   }
 }
+
 
 // -----scrollToTop-----
 .scroll-to-top {
@@ -705,6 +708,7 @@ section {
   position: fixed;
   z-index: 1000;
   display: flex;
+  background: var(--white-color);
   & button {
     font-size: 14px;
     padding: 0 2px;
@@ -714,4 +718,35 @@ section {
       border: 1px solid var(--brown-color);
     }
   }
+}
+
+// -----Для слабовидящих-----
+.scheme-white-black {
+  background: #000;
+  color: #fff;
+}
+.scheme-green-black {
+  background: #000;
+  color: #0f0;
+}
+.scheme-black-white {
+  background: #fff;
+  color: #000;
+}
+.scheme-brown-beige {
+  background: #f5f5dc;
+  color: #5c4033;
+}
+.scheme-blue-darkblue {
+  background: #add8e6;
+  color: #00008b;
+}
+
+img[hidden] {
+  display: none;
+}
+
+img[hidden] + .img-alt {
+  display: block;
+  font-style: italic;
 }
