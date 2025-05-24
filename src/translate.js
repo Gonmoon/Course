@@ -129,7 +129,8 @@ const translations = {
     "label-price": "Price",
     "label-material": "Material",
     "label-description": "Description",
-    "label-instock": "In Stock"
+    "label-instock": "In Stock",
+    "shop": "Shop now"
   },
   ru: {
     "menu-text": "Меню",
@@ -261,7 +262,8 @@ const translations = {
     "label-price": "Цена",
     "label-material": "Материал",
     "label-description": "Описание",
-    "label-instock": "Наличие"
+    "label-instock": "Наличие",
+    "shop": "Купить"
   }
 };
 
