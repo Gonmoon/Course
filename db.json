@@ -418,7 +418,11 @@
       "password": "admin1",
       "role": "admin",
       "id": 3,
-      "cart": [],
+      "cart": [
+        {
+          "id": "1"
+        }
+      ],
       "favorites": []
     }
   ],
